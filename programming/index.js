@@ -1,0 +1,30 @@
+import { fibSeries } from "./01_problems/01_fib.js";
+import { trailingZerosInFactorial } from "./01_problems/02_fact_trailing_zeros.js";
+import { gcd } from "./01_problems/03_gcd.js";
+import { lcm } from "./01_problems/04_lcm.js";
+import { checkPrime } from "./01_problems/05_check_prime.js";
+import { primeFactors } from "./01_problems/06_prime_factors.js";
+import { allDivisors } from "./01_problems/07_all_divisors_sorted.js";
+import { seiveOfEratosthenes } from "./01_problems/08_seive_of_eratosthenes.js";
+import { powerXN } from "./01_problems/09_x_power_n.js";
+import { secondDistinctMax } from "./02_arrays/02_second_distinct_max.js";
+import { reverseArray } from "./02_arrays/03_reverse_arr.js";
+import { moveZerosToEndAll } from "./02_arrays/04_move_zeros_to_end.js";
+import { maxIndexDifference } from "./02_arrays/06_max_index_diff.js";
+import { exactly3Divisors } from "./01_problems/10_exactly_3_divisors.js";
+
+// fibSeries();
+// trailingZerosInFactorial();
+// gcd();
+// lcm();
+// checkPrime();
+// primeFactors();
+// allDivisors();
+// seiveOfEratosthenes();
+// powerXN();
+// secondDistinctMax();
+// reverseArray();
+// moveZerosToEndAll();
+// maxIndexDifference();
+
+exactly3Divisors();
