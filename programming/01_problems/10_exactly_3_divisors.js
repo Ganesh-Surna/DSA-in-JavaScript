@@ -79,3 +79,27 @@ export function exactly3Divisors() {
   console.log(exactly3Divisors1(10000));
   console.log("TC = O(√n * log log √n), SC = O(√n)");
 }
+
+// Idea for this problem:
+//
+// The task is to count numbers up to n that have exactly 3 divisors.
+//
+// Key insight:
+// - A number has exactly 3 divisors if and only if it is the square of a prime number.
+//   - For example, 9 = 3^2 has divisors: 1, 3, 9.
+//   - For a number x = p^2 (where p is prime), its divisors are 1, p, and p^2.
+//
+// Approach:
+// 1. Find all primes p such that p^2 ≤ n.
+// 2. Count how many such primes exist.
+// 3. This can be done efficiently using the Sieve of Eratosthenes up to √n.
+//
+// Explanation:
+// - Only squares of primes have exactly 3 divisors (1, p, p^2).
+// - Use the sieve to find all primes up to √n, then count them.
+//
+// Example:
+// - For n = 100:
+//   - Primes ≤ 10: 2, 3, 5, 7
+//   - Their squares: 4, 9, 25, 49 (all ≤ 100)
+//   - So, there are 4 numbers ≤ 100 with exactly 3 divisors.

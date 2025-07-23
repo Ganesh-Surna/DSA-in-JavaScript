@@ -1,3 +1,4 @@
+
 export function seiveOfEratosthenes() {
   console.log("******* START of seiveOfEratosthenes ********");
   // ✅ TC= O(n log log n)
@@ -38,3 +39,30 @@ export function seiveOfEratosthenes() {
   seive2(50);
   console.log("******* END of seiveOfEratosthenes ********");
 }
+
+
+// Idea for this problem:
+//
+// The Sieve of Eratosthenes is an efficient algorithm to find all prime numbers up to a given number n.
+//
+// Steps:
+// 1. Create a boolean array isPrimeArr[0..n] and initialize all entries as true. (0 and 1 are not prime)
+// 2. Start from the first prime number (2). For each prime, mark all its multiples as not prime.
+// 3. Repeat for the next number in the array that is still marked as true (prime).
+// 4. Continue this process up to √n. All remaining true values in the array represent prime numbers.
+//
+// Time Complexity: O(n log log n)
+// Space Complexity: O(n)
+//
+// Explanation:
+// - By marking multiples of each prime, we efficiently eliminate non-prime numbers.
+// - We only need to start marking from i*i, because smaller multiples would have already been marked by smaller primes.
+// - The sieve is much faster than checking each number individually for primality.
+//
+// Example:
+// - For n = 20:
+//   - Start with all numbers marked as prime.
+//   - Mark multiples of 2 (except 2 itself): 4, 6, 8, 10, 12, 14, 16, 18, 20
+//   - Mark multiples of 3: 6, 9, 12, 15, 18
+//   - Mark multiples of 5: 10, 15, 20
+//   - Remaining true indices: 2, 3, 5, 7, 11, 13, 17, 19 (all primes up to 20)

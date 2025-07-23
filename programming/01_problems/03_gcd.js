@@ -48,3 +48,30 @@ export function gcd() {
   }
   console.log("GCD : ", fun3(10, 15));
 }
+
+// Idea for this problem:
+
+// The GCD (Greatest Common Divisor) of two numbers is the largest number that divides both of them without leaving a remainder.
+//
+// There are several ways to compute the GCD:
+//
+// 1. Euclidean Algorithm (Iterative and Recursive):
+//    - The key idea is: GCD(a, b) = GCD(b, a % b).
+//    - We keep replacing the larger number with the remainder of dividing the larger by the smaller, until one of them becomes zero. The other number at that point is the GCD.
+//    - This is very efficient (O(log(min(a, b)))).
+//
+// 2. Brute Force (Decremental Search):
+//    - Start from the smaller of the two numbers and check if it divides both numbers.
+//    - Decrease the candidate until you find a number that divides both.
+//    - This is less efficient, especially for large numbers.
+
+// Explanation:
+
+// - The Euclidean algorithm works because if a = bq + r, then any number that divides both a and b must also divide r (the remainder).
+// - This reduces the problem size at each step, making it fast.
+//
+// Example:
+// - GCD(10, 15):
+//   - 15 % 10 = 5 → GCD(10, 5)
+//   - 10 % 5 = 0 → GCD(5, 0)
+//   - So, GCD is 5.
