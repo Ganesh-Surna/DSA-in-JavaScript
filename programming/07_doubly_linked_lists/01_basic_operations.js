@@ -75,10 +75,16 @@ class DLL{
     deleteHead(){
         if(!this.head) return
         this.head = this.head.next
+        if(this.head){
+            this.head.prev = null
+        }
     }
     
     deleteTail(){
-        if(!this.head || !this.head.next) return
+        if(!this.head || !this.head.next){
+            this.head = null
+            return
+        }
         
         let curr = this.head
         // let prev = null
@@ -104,6 +110,9 @@ class DLL{
         
         if(pos===1){
             this.head = this.head.next
+            if(this.head){
+                this.head.prev = null
+            }
             return
         }
         
