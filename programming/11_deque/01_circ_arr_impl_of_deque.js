@@ -42,7 +42,7 @@ class Deque{
         let rear = (this.front+this.sz-1)%this.cap
         let res = this.arr[rear]
         // No need to change anything, just decrease this.sz. 
-        //Because we are getting rear using this.sz & this.front anyway
+        // Because we are getting rear using this.sz & this.front anyway
         this.sz--
         return res
     }

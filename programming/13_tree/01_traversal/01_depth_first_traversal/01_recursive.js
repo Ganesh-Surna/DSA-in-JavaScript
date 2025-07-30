@@ -42,8 +42,6 @@ class BinaryTree{
         this.postorder(node.right)
         console.log(node.key)
     }
-    height(node=this.root){
-    }
 }
 
 const bTree = new BinaryTree()

@@ -8,7 +8,7 @@ function printKDistantfromLeaf(node, k) {
     if (!node.left && !node.right) {
       // If k=0, this leaf node itself should be counted
       if (k === 0) count++;
-      return new Set([0]);
+      return new Set([0]); // Means distance from leaf to leaf is 0 (adding 0 to the set)
     }
 
     let leftDistances = dfs(node.left);
@@ -16,6 +16,7 @@ function printKDistantfromLeaf(node, k) {
 
     let currDistances = new Set();
 
+    // Add 1 to each distance from children
     for (let d of leftDistances) {
       currDistances.add(d + 1);
     }
@@ -28,6 +29,7 @@ function printKDistantfromLeaf(node, k) {
       count++;
     }
 
+    // Return the set of distances from current node to leaves
     return currDistances;
   }
 

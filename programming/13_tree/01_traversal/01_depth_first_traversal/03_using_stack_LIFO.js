@@ -34,7 +34,7 @@ function inorder(root) {
   const stack = [];
   let current = root;
 
-  while (current !== null || stack.length > 0) {
+  while (current || stack.length > 0) {
     // Traverse to the leftmost node
     while (current) {
       stack.push(current);
@@ -110,6 +110,8 @@ function postorder2(root) {
   return result;
 }
 
+// ✅ TC = O(n)
+// ✅ SC = O(n)
 function postorder3(root) {
     if (!root) return [];
     const stack1 = [root];

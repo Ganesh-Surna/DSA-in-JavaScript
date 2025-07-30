@@ -12,7 +12,7 @@ class BinaryTree {
   // ✅ TC = O(n), ✅ SC = O(h)
   height(node = this.root) {
     if (!node) {
-      return 0; // return -1 for edges count convention
+      return 0; // return -1 to find height with edges count convention
     }
 
     return Math.max(this.height(node.left), this.height(node.right)) + 1;

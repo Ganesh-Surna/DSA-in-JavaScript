@@ -33,6 +33,7 @@ class Solution {
 
         // WAY 1:
         for(let i=0; i<s.length; i++){
+            // [st.length-1] ==> means peak (in arr impl of stack)
             if(st.length===0 || st[st.length-1]!==s[i]){
                 st.push(s[i])
             }

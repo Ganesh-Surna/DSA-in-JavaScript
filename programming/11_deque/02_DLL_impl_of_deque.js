@@ -57,6 +57,7 @@ class Deque {
     } else {
       let prev = this.rear.prev;
       prev.next = null;
+      this.rear.prev = null;
       this.rear = prev;
     }
 
@@ -67,5 +68,16 @@ class Deque {
     if (this.sz === 0) return null;
 
     return this.front.data;
+  }
+  getRear() {
+    if (this.sz === 0) return null;
+
+    return this.rear.data;
+  }
+  size() {
+    return this.sz;
+  }
+  isEmpty() {
+    return this.sz === 0;
   }
 }
