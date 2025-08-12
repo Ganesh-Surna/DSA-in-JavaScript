@@ -164,5 +164,3 @@ class Solution {
 // - The code uses a shrinking gap to compare and swap elements that are far apart, gradually bringing the arrays closer to sorted order.
 // - It works across both arrays as if they were a single combined array.
 // - No extra space is used; all swaps are in-place.
-
-// Let me know if you want a step-by-step for the second example or have any questions!

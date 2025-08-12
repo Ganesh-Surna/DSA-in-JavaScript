@@ -29,11 +29,12 @@ class Solution {
 
     // START OF --> Find kth node from end
     let second = head;
-    first = head;
-    for (let i = 0; i < k && first; i++) {
-      first = first.next;
-    }
-    if (!first) return head; // ❌
+    // No need to do this again, we already have first pointer
+    // first = head;
+    // for (let i = 0; i < k && first; i++) {
+    //   first = first.next;
+    // }
+    // if (!first) return head; // ❌
     while (first.next) {
       prev2 = second;
       second = second.next;

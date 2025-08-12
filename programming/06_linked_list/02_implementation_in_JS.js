@@ -126,7 +126,7 @@ class LinkedList {
     let pos = this.recursiveSearch(data, node.next);
 
     if (pos === -1) return -1;
-    return pos + 1;
+    return 1 + pos;
   }
 
   // Insert a node in a sorted list

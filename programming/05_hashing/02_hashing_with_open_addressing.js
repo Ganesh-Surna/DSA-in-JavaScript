@@ -5,7 +5,7 @@ class MyHash {
     this.table = new Array(c).fill(-1); // means empty
   }
   hash(x) {
-    return x % this.c;
+    return x % this.cap;
   }
   search(x) {
     const hIdx = this.hash(x);
@@ -15,6 +15,8 @@ class MyHash {
     while (this.arr[i] !== -1) {
       if (this.arr[i] === x) return true;
       i = (i + 1) % this.cap; // Linear probing (even circularly)
+
+      // if we have come back to the same index, then the element is not present
       if (i === hIdx) {
         return false;
       }

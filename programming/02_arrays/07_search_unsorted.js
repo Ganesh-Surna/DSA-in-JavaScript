@@ -1,3 +1,6 @@
+// Given an unsorted array arr[] of size N, 
+// find the first occurrence of a given element x.
+
 class Solution {
   // ✅ TC= O(n/2) --> O(n)
   // ✅ SC = O(1)

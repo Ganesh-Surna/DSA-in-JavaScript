@@ -109,7 +109,7 @@ class LinkedList {
     let pos = this.recursiveSearch(data, node.next);
 
     if (pos === -1) return -1;
-    return pos + 1;
+    return 1 + pos;
   }
 
   sortedInsert(data) {
@@ -189,7 +189,7 @@ class LinkedList {
 
     let second = this.head,
       first = this.head;
-    for (let i = 1; i < k && first; i++) {
+    for (let i = 1; i < n && first; i++) {
       first = first.next;
     }
 

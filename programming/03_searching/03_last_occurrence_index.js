@@ -13,7 +13,7 @@ export function lastOccurenceIndex() {
             return mid;
           }
   
-          start = mid + 1; // Searching in remaining left part
+          start = mid + 1; // Searching in remaining right part
         } else if (arr[mid] > x) {
           end = mid - 1;
         } else {

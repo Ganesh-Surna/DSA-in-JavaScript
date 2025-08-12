@@ -1,6 +1,6 @@
 export function maxIndexDifference() {
   console.log("******* START of maxIndexDifference ********");
-  // ✅ TC= O(n)
+  // ✅ TC = O(n)
   // ✅ SC = O(n)
   function maxIndexDiff(arr) {
     const n = arr.length;

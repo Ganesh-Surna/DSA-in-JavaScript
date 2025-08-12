@@ -1,19 +1,23 @@
 // Find triplets with zero sum
 
-// Difficulty: MediumAccuracy: 25.81%Submissions: 342K+Points: 4Average Time: 20m
-// Given an array arr[] of integers, determine whether it contains a triplet whose sum equals zero. Return true if such a triplet exists, otherwise, return false.
+// Given an array arr[] of integers, determine whether it contains a triplet 
+// whose sum equals zero. 
+// Return true if such a triplet exists, otherwise, return false.
 
 // Examples:
 
 // Input: arr[] = [0, -1, 2, -3, 1]
 // Output: true
 // Explanation: The triplet [0, -1, 1] has a sum equal to zero.
+
 // Input: arr[] = [1, 2, 3]
 // Output: false
 // Explanation: No triplet with a sum of zero exists.
+
 // Input: arr[] = [-5, 3, 2, -1, 0, 1]
 // Output: true
 // Explanation: The triplet [-5, 3, 2] has a sum equal to zero.
+
 // Constraints:
 // 1 <= arr.size() <= 103
 // -106 <= arr[i] <= 106
@@ -30,7 +34,9 @@ class Solution {
    */
   findTriplets(arr) {
     // Sort the array first
+    // (Sorting the array is necessary to use two-pointer technique)
     arr.sort((a, b) => a - b);
+
     const n = arr.length;
     for (let i = 0; i < n - 2; i++) {
       // To avoid duplicates, skip the same element

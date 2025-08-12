@@ -17,7 +17,7 @@ class MyHash {
   }
   insert(x) {
     const idx = this.hash(x);
-    this.table[idx].push(idx);
+    this.table[idx].push(x);
   }
   delete(x) {
     if (this.search(x)) {

@@ -12,11 +12,11 @@ class DLL {
   }
   prepend(x) {
     const newNode = new Node(x);
-    newNode.next = this.head;
     if (this.head) {
+      newNode.next = this.head;
       this.head.prev = newNode;
     }
-    this.head = newNode;
+    this.head = newNode;f
   }
   append(x) {
     const newNode = new Node(x);

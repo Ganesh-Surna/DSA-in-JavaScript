@@ -1,3 +1,5 @@
+// Just "(" & ")" paranthesis
+
 function isBalanced(s) {
     let balance = 0;
     for (const char of s) {

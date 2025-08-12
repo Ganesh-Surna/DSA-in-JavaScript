@@ -8,9 +8,9 @@ class Solution {
   mergeSort(arr, start = 0, end = arr.length - 1) {
     if (start < end) {
       let mid = Math.floor((start + end) / 2);
-      this.mergeSort(arr, start, mid);
-      this.mergeSort(arr, mid + 1, end);
-      this.merge(arr, start, mid, end);
+      this.mergeSort(arr, start, mid); // left part
+      this.mergeSort(arr, mid + 1, end); // right part
+      this.merge(arr, start, mid, end); // merge both parts
     }
     // Print only when the full array is sorted
     if (start === 0 && end === arr.length - 1) {

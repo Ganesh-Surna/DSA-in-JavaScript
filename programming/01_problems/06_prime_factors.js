@@ -58,7 +58,7 @@ export function primeFactors() {
         console.log(i);
 
         let x = i * i;
-        while (n % x == 0) {
+        while (n % x === 0) {
           // TC = O(log[base i] n) --> O(log n)
           console.log(i);
           x = x * i;
