@@ -55,11 +55,10 @@ class MinHeap {
     let arr = this.arr,
       n = this.arr.length;
 
-    if (n === 0)
-      return (null[
-        //Step1: Swap min(first(i.e., root)) with lastmost node
-        (arr[0], arr[n - 1])
-      ] = [arr[n - 1], arr[0]]);
+    if (n === 0) return null;
+    
+    //Step1: Swap min(first(i.e., root)) with lastmost node
+    [arr[0], arr[n - 1]] = [arr[n - 1], arr[0]];
 
     //Step2: Remove lastmost node that is min after above swap
     let min = arr.pop();

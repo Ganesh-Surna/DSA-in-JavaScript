@@ -5,30 +5,30 @@
 // Expand the window from the right until the character is not in the set,
 // then shrink the window from the left until the character is not in the set.
 
-
 // ✅ TC = O(n), ✅ SC = O(1)
 function lengthOfLongestSubstring(s) {
-    const set = new Set();
-    let left = 0, maxLen = 0;
-    for (let right = 0; right < s.length; right++) {
-        // Expand the window from the right until the character is not in the set
-
-        // Shrink the window from the left until the character is not in the set
-        while (set.has(s[right])) {
-            set.delete(s[left]);
-            left++;
-        }
-        
-        set.add(s[right]);
-        maxLen = Math.max(maxLen, right - left + 1);
+  const set = new Set();
+  let left = 0, maxLen = 0;
+  for (let right = 0; right < s.length; right++) {
+    // Shrink the window from the left until the character is not in the set
+    while (set.has(s[right])) {
+      set.delete(s[left]);
+      left++;
+      // maxLen = Math.max(maxLen, right - left + 1); // This is not correct if the string' len = 1. Ex: s = " "
     }
-    return maxLen;
+
+    // Expand the window from the right until the character is not in the set
+    set.add(s[right]); // if the char repeated (it is deleted in above while loop & will be added now. So the left should be considered to be after removing prev repeated char. So the maxLen updated after updating left)
+    maxLen = Math.max(maxLen, right - left + 1);
+  }
+  return maxLen;
 }
 
 // Test Cases
-let s1 = "abcabcbb"
-console.log(lengthOfLongestSubstring(s1))
-// Output: 3 (subarray [abc])
+let s = "abcabcbb"; // // Output: 3 (subarray [abc])
+s = " "; // // Output: 1 (subarray [ ])  i.e., space
+console.log(lengthOfLongestSubstring(s));
+
 
 // Flow:
 // right=0: [a] set={a}, maxLen=1

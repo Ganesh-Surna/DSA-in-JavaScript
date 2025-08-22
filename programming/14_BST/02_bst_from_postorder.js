@@ -34,6 +34,29 @@ function buildBSTFromPostorder(postorder) {
 // ********** USAGE: **********
 const postorder = [1, 7, 5, 50, 40, 10];
 const root = buildBSTFromPostorder(postorder);
+// output tree:
+// 
+// Postorder: [1, 7, 5, 50, 40, 10]
+// 
+// Tree Structure:
+//       10
+//      /  \
+//     5    40
+//    / \    \
+//   1   7    50
+// 
+// Explanation of Construction:
+// - Postorder traversal: Left → Right → Root
+// - We process from right to left (reverse order)
+// - 10 becomes root (last element)
+// - 40 becomes right child of 10 (40 > 10)
+// - 50 becomes right child of 40 (50 > 40)
+// - 5 becomes left child of 10 (5 < 10)
+// - 7 becomes right child of 5 (7 > 5)
+// - 1 becomes left child of 5 (1 < 5)
+// 
+// Inorder traversal: [1, 5, 7, 10, 40, 50] ✓ (sorted)
+
 
 function inorderTraversal(node) {
   if (!node) return [];

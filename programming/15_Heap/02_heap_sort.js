@@ -31,6 +31,17 @@ function maxHeapify(arr, size, i) {
     this.maxHeapify(max_idx, arr);
   }
 }
+function maxHeapifyIterative(arr, size, i) {
+  while (true) {
+    let l = this.left(i), r = this.right(i);
+    let max_idx = i;
+    if (l < size && arr[l] > arr[max_idx]) max_idx = l;
+    if (r < size && arr[r] > arr[max_idx]) max_idx = r;
+    if (max_idx === i) break;
+    [arr[i], arr[max_idx]] = [arr[max_idx], arr[i]];
+    i = max_idx; // Move to the child
+  }
+}
 // ✅ TC = O(nlogn)
 function heapSort(arr) {
   let n = arr.length;
@@ -67,6 +78,8 @@ class Solution {
   buildHeap(arr) {
     let n = arr.length;
 
+    // index of parent of lastmost node (index of lastmost internal node)
+    // (i.e., leaf nodes are already considered to be maxHeapified)
     let last_idx = this.parent(n - 1);
     for (let i = last_idx; i >= 0; i--) {
       this.maxHeapify(arr, n, i);
@@ -91,6 +104,18 @@ class Solution {
     }
   }
 
+  maxHeapifyIterative(arr, size, i) {
+    while (true) {
+      let l = this.left(i), r = this.right(i);
+      let max_idx = i;
+      if (l < size && arr[l] > arr[max_idx]) max_idx = l;
+      if (r < size && arr[r] > arr[max_idx]) max_idx = r;
+      if (max_idx === i) break;
+      [arr[i], arr[max_idx]] = [arr[max_idx], arr[i]];
+      i = max_idx; // Move to the child
+    }
+  }
+
   // ✅ TC = O(nlogn)
   // ✅ SC = O(1)
   heapSort(arr) {
@@ -109,5 +134,5 @@ class Solution {
   }
 }
 
-// Its TC is better SC=O(1)
+// Its TC is better SC=O(1) (maxHeapify can be write as iterative)
 // But Merge Sort & Quick sort works much faster in practice

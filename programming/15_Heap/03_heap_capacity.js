@@ -48,10 +48,9 @@ class MinHeap {
         arr[i] = k
         
         // If parent is greater than the child then swap, (minHeapifying iteratively)
-        while(i !== 0 && arr[this.parent(i)] > arr[i]){
+        while(i > 0 && arr[this.parent(i)] > arr[i]){
             let p = this.parent(i);
             [arr[i], arr[p]] = [arr[p], arr[i]];
-            
             i=p
         }
         
@@ -71,7 +70,7 @@ class MinHeap {
     // Decrease key operation, helps in deleting the element
     decreaseKey(i, new_val) {
         this.harr[i] = new_val;
-        while (i !== 0 && this.harr[this.parent(i)] > this.harr[i]) {
+        while (i > 0 && this.harr[this.parent(i)] > this.harr[i]) {
             let temp = this.harr[i];
             this.harr[i] = this.harr[this.parent(i)];
             this.harr[this.parent(i)] = temp;

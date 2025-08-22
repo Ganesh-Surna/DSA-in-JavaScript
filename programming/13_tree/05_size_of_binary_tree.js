@@ -76,7 +76,7 @@ class BinaryTree {
   constructor() {
     this.root = null;
   }
-  // ✅TC=O(n)
+  // ✅ TC=O(n)
   // ✅ SC=theta(h)
   // Best for Balanced Tree
   size(node = this.root) {
@@ -87,7 +87,7 @@ class BinaryTree {
     return 1 + this.size(node.left) + this.size(node.right);
   }
 
-  // ✅TC=O(n)
+  // ✅ TC=O(n)
   // ✅ SC=theta(w)
   // Best for Skewed Tree
   levelOrderSize() {
