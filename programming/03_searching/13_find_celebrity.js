@@ -1,9 +1,9 @@
 // Problem: In a party of n people, a celebrity is someone 
 // who knows nobody but is known by everyone.
 //  Use a voting-like approach to find the celebrity.
+
 // Input: [[1, 1, 0], [0, 1, 0], [0, 1, 1]] 
 // (matrix where knows[i][j] = 1 means person i knows j).
-
 // Output: 1 (Person 1 is the celebrity).
 
 function findCelebrity(n, knows) {

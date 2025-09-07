@@ -8,23 +8,29 @@ class TreeNode {
 
 // ✅ TC = O(n), SC = O(h)
 function buildBSTFromPostorder(postorder) {
+  // 1. Initialize index to the last element of the postorder array
   let index = postorder.length - 1;
 
   function helper(lowerBound, upperBound) {
+    // 2. If we have processed all elements, return null
     if (index < 0) return null;
 
     let val = postorder[index];
 
-    // Value must be within bounds to be valid
+    // 3. If value not in bounds, return null (i.e., not a valid BST)
     if (val < lowerBound || val > upperBound) return null;
 
-    index--; // move to next element
+    // 4. Move to next element
+    index--;
+
+    // 5. Create a new node with the current value
     const root = new TreeNode(val);
 
-    // Build right subtree first, then left
+    // 6. Build right subtree first, then left
     root.right = helper(val, upperBound);
     root.left = helper(lowerBound, val);
 
+    // 7. Return the root
     return root;
   }
 

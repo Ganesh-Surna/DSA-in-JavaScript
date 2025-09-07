@@ -6,6 +6,10 @@
 // ✅ SC = O(1)
 function maxCircSubarrSum(arr) {
   let n = arr.length;
+
+  // Max circular subarr sum =  Max(Normal Subarr Max sum, Only Circular Subarr Max sum)
+  // Only Circular Subarr Max sum = Total Sum - Normal Subarr Min sum
+
   let sum = arr[0]; // To hold total sum of arr
   let max_ending_sum = arr[0], max_normal = arr[0]; // To hold max sum of normal subarr
   let min_ending_sum = arr[0], min_normal = arr[0]; // To hold min sum of normal subarr

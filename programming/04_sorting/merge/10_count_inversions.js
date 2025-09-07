@@ -16,8 +16,8 @@
 // Explanation: As all the elements of array are same, so there is no inversion count.
 
 // Constraints:
-// 1 ≤ arr.size() ≤ 105
-// 1 ≤ arr[i] ≤ 104
+// 1 ≤ arr.size() ≤ 10^5
+// 1 ≤ arr[i] ≤ 10^4
 
 // Expected Complexities
 // Time Complexity: O(n log n)
@@ -56,7 +56,7 @@ class Solution {
         arr[k++] = left[i++];
       } else {
         arr[k++] = right[j++];
-        invCount += (left.length - i);
+        invCount += (left.length - i); // means if left[i] > right[j], then all elements in left[i+1] to left[left.length-1] will be greater than right[j]
       }
     }
     while (i < left.length) arr[k++] = left[i++];

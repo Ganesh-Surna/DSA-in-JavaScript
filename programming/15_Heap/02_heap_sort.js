@@ -28,9 +28,11 @@ function maxHeapify(arr, size, i) {
 
   if (max_idx !== i) {
     [arr[max_idx], arr[i]] = [arr[i], arr[max_idx]];
-    this.maxHeapify(max_idx, arr);
+    this.maxHeapify(arr, n, max_idx);
   }
 }
+
+// ✅ TC = O(logn), SC = O(1)
 function maxHeapifyIterative(arr, size, i) {
   while (true) {
     let l = this.left(i), r = this.right(i);
@@ -43,11 +45,12 @@ function maxHeapifyIterative(arr, size, i) {
   }
 }
 // ✅ TC = O(nlogn)
+// ✅ SC = O(1)
 function heapSort(arr) {
   let n = arr.length;
 
   // Step1: Build Max Heap
-  buildHeap(arr);
+  buildHeap(arr); // O(n)
 
   // Step2: Swap first & last nodes & maxHeapify the arr excluding the last node. (The last node shrinks each time)
 
@@ -58,7 +61,7 @@ function heapSort(arr) {
     // i is the size of arr to be considered while it is shrinking from right
     // only the root is voilating after above swap, so maxHeapify at index "0"
     // TC = O(logn)
-    maxHeapify(arr, i, 0);
+    maxHeapify(arr, i, 0);  // TC=O(logn), SC=O(1) by iterative way
   }
 }
 

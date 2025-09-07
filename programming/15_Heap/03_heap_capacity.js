@@ -37,7 +37,7 @@ class MinHeap {
      * @param {number} k
      */
 
-    // ✅ TC = O()
+    // ✅ TC = O(logn)
     insertKey(k) {
         // Your code here.
         let arr = this.harr

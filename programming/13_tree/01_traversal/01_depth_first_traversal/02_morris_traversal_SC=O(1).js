@@ -32,7 +32,7 @@ function inOrder(root) {
       // Make curr as the right child of its
       // inorder predecessor
       if (!prev.right) {
-        prev.right = curr;
+        prev.right = curr; // we will set this & still go to left of curr (because it is in-order)
         curr = curr.left;
       } else {
         // Revert the changes made in the
@@ -62,7 +62,7 @@ function preorder(root) {
                 prev = prev.right;
             }
             if (!prev.right) {
-                result.push(current.data); // Visit before going left
+                result.push(current.data); // Visit before going left (because it is pre-order)
                 prev.right = current;
                 current = current.left;
             } else {

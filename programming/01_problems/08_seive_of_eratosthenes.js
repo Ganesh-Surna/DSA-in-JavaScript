@@ -6,9 +6,9 @@ export function seiveOfEratosthenes() {
   function seive1(n){
     let isPrimeArr = new Array(n+1).fill(true);
     isPrimeArr[0] = isPrimeArr[1] = false;
-    for(let i=2; i*i<=n; i++){
+    for(let i=2; i*i<=n; i++){ // 
         if(isPrimeArr[i]){
-            for(let j=i*i; j<=n; j+=i){
+            for(let j=i*i; j<=n; j+=i){  // j=i*i --> We only need to start marking from i*i, because smaller multiples would have already been marked by smaller primes.
                 isPrimeArr[j]=false;
             }
         }
@@ -29,7 +29,7 @@ export function seiveOfEratosthenes() {
     for(let i=2; i<=n; i++){
         if(isPrimeArr[i]){
             console.log(i)
-            for(let j=i*i; j<=n; j+=i){
+            for(let j=i*i; j<=n; j+=i){  // j=i*i --> We only need to start marking from i*i, because smaller multiples would have already been marked by smaller primes.
                 isPrimeArr[j]=false;
             }
         }

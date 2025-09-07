@@ -16,7 +16,7 @@ class DLL {
       newNode.next = this.head;
       this.head.prev = newNode;
     }
-    this.head = newNode;f
+    this.head = newNode;
   }
   append(x) {
     const newNode = new Node(x);
@@ -72,7 +72,7 @@ class DLL {
       curr.next = curr.prev;
       curr.prev = currNext;
 
-      curr = curr.prev;
+      curr = curr.prev; // which is next after above swap
     }
 
     this.head = prev;

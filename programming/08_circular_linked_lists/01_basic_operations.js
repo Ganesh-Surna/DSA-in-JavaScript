@@ -124,8 +124,6 @@ class CLL{
         }
         
         curr.next = curr.next.next
-        
-        
     }
     reverse(){
         if(!this.head || this.head === this.head.next){

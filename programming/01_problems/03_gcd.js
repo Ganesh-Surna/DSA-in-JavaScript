@@ -1,3 +1,6 @@
+
+// ✅ Euclidean Algorithm
+
 export function gcd() {
   // TC --> O(log(min(a,b)))
   // SC --> O(1)
@@ -13,7 +16,9 @@ export function gcd() {
     // return min;
     while (b !== 0) {
       [a, b] = [b, a % b]; //Swaping
-      //   You asked if using an array for swapping affects the space complexity. In JavaScript, [a, b] = [b, a] creates a temporary array of size 2 for the swap. However, this is still constant space—it does not depend on the size of the input numbers, just a fixed, small amount of extra memory.
+      //   You asked if using an array for swapping affects the space complexity. 
+      // In JavaScript, [a, b] = [b, a] creates a temporary array of size 2 for the swap. 
+      // However, this is still constant space—it does not depend on the size of the input numbers, just a fixed, small amount of extra memory.
     }
     return a;
   }

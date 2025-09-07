@@ -13,14 +13,14 @@ class Solution {
     for (let i = 0; i < n; i++) {
       const num = Math.abs(arr[i]); // Math.abs must for subsequent iterations when it is changed to -ve due to previous iterations
       if (num <= n) {
-        arr[num - 1] = -Math.abs(arr[num - 1]); // Changes to negative
+        arr[num - 1] = -Math.abs(arr[num - 1]); // Changes to negative  (& arr[num-1] --> numbers should be 1-based, but considering 0-based indexing) if num is 5, then arr[4] will change to -arr[4]
       }
     }
 
     // Step 3: Find the first positive index
     for (let i = 0; i < n; i++) {
       if (arr[i] > 0) {
-        return i + 1;
+        return i + 1; // number = index + 1 (do 0-based indexing, but at last consider 1-based number system)
       }
     }
 

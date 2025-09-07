@@ -94,10 +94,12 @@ class LinkedList {
     let fast = dummy;
     let slow = dummy;
 
-    // Move fast n+1 steps ahead
-    for (let i = 0; i <= n; i++) {
+    // Move fast n+1 steps ahead (Why n+1? because we used extra dummy node)
+    for (let i = 0; i <= n && fast; i++) {
         fast = fast.next;
     }
+
+    if (!fast) return dummy.next;
 
     // Move both pointers until fast reaches the end
     while (fast !== null) {
@@ -159,8 +161,7 @@ class LinkedList {
   middleNode() {
     if (!this.head) return -1;
 
-    let slow = this.head,
-      fast = this.head;
+    let slow = this.head, fast = this.head;
     while (fast && fast.next) {
       slow = slow.next;
       fast = fast.next.next;

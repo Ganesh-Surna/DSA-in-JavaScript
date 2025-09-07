@@ -82,7 +82,7 @@ function firstNegativeInWindow(arr, K) {
             deq.deleteFront();
         }
 
-        // Add current element if it's negative
+        // Add current element if it's negative (No while loop, for first -ve of window. While loop for min/max of window)
         if (arr[i] < 0) {
             deq.insertRear(i);
         }

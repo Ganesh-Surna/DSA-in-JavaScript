@@ -15,15 +15,15 @@ function zigZagTraversal(root) {
         if (level % 2 === 1) {
           // Odd level (left-to-right)
           curr = deque.shift(); // Process from front
-          // Add children to back (left first)
+          // Add children to back (left first) - because next will be even level(right->left). So pop() should get last first.
           if (curr.left) deque.push(curr.left);
-          if (curr.right) deque.push(curr.right);
+          if (curr.right) deque.push(curr.right); // curr.right will be at back
         } else {
           // Even level (right-to-left)
           curr = deque.pop(); // Process from back
-          // Add children to front (right first)
+          // Add children to front (right first) - because next will be odd level(left->right). So shift() should get left first.
           if (curr.right) deque.unshift(curr.right);
-          if (curr.left) deque.unshift(curr.left);
+          if (curr.left) deque.unshift(curr.left); // curr.left will be at front
         }
 
         levelNodes.push(curr.data); // Add to current level

@@ -11,8 +11,8 @@ class Solution {
   quickSort(arr, l = 0, h = arr.length - 1) {
     if (l < h) {
       const p = this.hoaresPartition(arr, l, h);
-      // in lomuto partition we exclude p
-      this.quickSort(arr, l, p ); // partition upto p (p included)
+      // in lomuto partition we exclude p (because pivot fixed at crct position and p is the pivot)
+      this.quickSort(arr, l, p ); // partition upto p (p included) (because pivot is not fixed at its correct position, and p is not pivot. p is the index around which the partition happens)
       this.quickSort(arr, p + 1, h); // partition right to p (p excludes)
     }
   }

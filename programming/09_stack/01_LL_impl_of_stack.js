@@ -4,6 +4,8 @@ class Node{
         this.next = null
     }
 }
+
+// Push & Pop from head side only. (stack open from left, closed from right)
 class Stack{
     constructor(){
         this.head = null

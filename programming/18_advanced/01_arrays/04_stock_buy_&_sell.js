@@ -5,6 +5,10 @@
 // ✅ SC = O(1)
 
 // I. Can sell & Buy at same day
+// Efficient Calculation: 
+//  Instead of actually buying and selling at every peak and valley,
+//  we can simply add all positive differences between consecutive days. 
+// This approach ensures we capture all possible profits without missing any.
 function maxProfit(arr){
     let n = arr.length;
     let profit = 0;

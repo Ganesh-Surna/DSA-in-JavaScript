@@ -12,10 +12,8 @@ class Solution {
   swapKthNode(head, k) {
     if (!head || !head.next || k <= 0) return head;
 
-    let prev1 = null,
-      prev2 = null;
-    let node1 = head,
-      node2 = head;
+    let prev1 = null, prev2 = null;
+    let node1 = head, node2 = head;
 
     // START OF --> Find kth node from beginning
     let first = head;

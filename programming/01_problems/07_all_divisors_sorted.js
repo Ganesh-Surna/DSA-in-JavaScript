@@ -20,7 +20,7 @@ export function allDivisors() {
   // ✅ SC = O(1)
   function allDivisors2(n){
     let i;
-    for(i=1; i*i<n; i++){
+    for(i=1; i*i<n; i++){ // ✅ i*i < n, ❌ i*i<=n  (because if i*i === n, it will be printed in below loop, not here - So that it will be printed only once)
         if(n%i===0){
             console.log(i)
         }

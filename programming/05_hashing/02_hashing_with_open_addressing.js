@@ -30,6 +30,12 @@ class MyHash {
 
     const i = this.hash(x);
 
+    // if the slot is not empty, not deleted, and not the element we are inserting, then we need to find the next slot
+    // Stop in 3 cases:
+    // 1. The slot is empty ||
+    // 2. The slot is deleted ||
+    // 3. The slot is the element we are inserting
+    
     while (
       this.table[i] !== -1 &&
       this.table[i] !== -2 &&

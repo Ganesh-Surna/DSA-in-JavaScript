@@ -7,7 +7,7 @@
 
 // ✅ TC = O(n), ✅ SC = O(1)
 function minSubArrayLen(target, nums) {
-    let left = 0, sum = 0, minLen = Infinity;
+    let left = 0, sum = 0, minLen = Infinity; // or minLen = 0 is also ok
     for (let right = 0; right < nums.length; right++) {
         // Expand the window from the right until sum >= target
         sum += nums[right];

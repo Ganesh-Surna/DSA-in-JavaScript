@@ -18,7 +18,7 @@ function checkPrime(n) {
 
 export function primeFactors() {
   console.log("******* START of primeFactors ********");
-  // ✅ TC= O(n1/2 * logn)
+  // ✅ TC= O(√n * logn)
   // ✅ SC = O(1)
   function primeFactorsFun2MostEfficient(n) {
     if (n <= 1) return;
@@ -30,16 +30,18 @@ export function primeFactors() {
       console.log(3);
       n = n / 3;
     }
-    for (let i = 5; i * i <= n; i = i + 6) {
-      while (n % i === 0) {
+    for (let i = 5; i * i <= n; i = i + 6) { // TC = O(√n)
+      while (n % i === 0) { // TC = O(log n)
         console.log(i);
         n = n / i;
       }
-      while (n % (i + 2) === 0) {
+      while (n % (i + 2) === 0) { // TC = O(log n)
         console.log(i + 2);
         n = n / (i + 2);
       }
     }
+
+    // ⭐⭐⭐ If n is still > 3, then it is a prime factor itself
     if (n > 3) {
       console.log(n);
     }

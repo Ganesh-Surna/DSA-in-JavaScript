@@ -15,7 +15,7 @@ class BinaryTree {
       return 0; // return -1 to find height with edges count convention
     }
 
-    return Math.max(this.height(node.left), this.height(node.right)) + 1;
+    return 1 + Math.max(this.height(node.left), this.height(node.right));
     // let leftH = 0, rightH = 0
     // leftH = this.height(node.left)
     // rightH = this.height(node.right)

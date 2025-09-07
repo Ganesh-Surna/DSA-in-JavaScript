@@ -16,7 +16,7 @@ class Solution {
       } else if (arr[end] === x) {
         res = end;
         end--;
-        start++;
+        start++; // because we have already checked the start index it is not = x, so we can move it
       } else {
         end--;
         start++;

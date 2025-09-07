@@ -58,10 +58,10 @@ function firstCircularTour(petrol, dist){
     while(start !== end || curr_petrol < 0) {
         // If current petrol is negative, remove the starting point
         while(curr_petrol < 0 && start !== end) {
-            curr_petrol -= petrol[start] - dist[start]
-            start = (start + 1) % n
-            q.deque()
-            if(start === 0) {
+            curr_petrol -= petrol[start] - dist[start] // removing starting petrol pump from curr_petrol
+            q.deque() // removing starting petrol pump from queue
+            start = (start + 1) % n // moving to next petrol pump
+            if(start === 0) { // if start is 0, then we have checked all petrol pumps
                 return -1
             }
         }

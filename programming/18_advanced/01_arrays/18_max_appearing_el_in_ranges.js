@@ -1,5 +1,8 @@
-// Problem 1: Given an array of ranges,
-// find the element that appears the most in the ranges.
+// Problem 1: You are given two integer arrays L[] and R[], 
+// where each L[i] and R[i] define the start and end of a range respectively. 
+// The goal is to find the integer that appears in the most number of these ranges. 
+// If multiple integers occur in the same maximum number of ranges, 
+// then return the smallest integer among them. 
 
 // Constraints:
 // 1) 1 <= left[i] <= right[i] < 100  (Max range is 100)
@@ -7,6 +10,44 @@
 
 // Note: If more than one element appears the most,
 // return the smallest one (which is first in the freq array).
+
+// Best Sol: (Finding maximum range in given R arr is better than using given constraints )
+// ✅ TC = O(n) + O(max(R arr)) = O(n + max(R arr))
+// ✅ SC = O(max(R arr))
+function maxOccured(L, R) {
+    let n = L.length
+    
+    // 1. Find Max range
+    let maxRange = R[0]
+    for(let i=0; i<n; i++){
+        if(R[i] > maxRange){
+            maxRange = R[i]
+        }
+    }
+    
+    // 2. Create freq arr with len maxRange+1 & fill with 0's
+    // we mark ending range's next index by decrementing (so maxRange+1)
+    let freq = new Array(maxRange+1).fill(0)
+    
+    // 3. marking
+    for(let i=0; i<n; i++){
+        freq[L[i]]++    // start range ++
+        freq[R[i]+1]--  // end range --
+    }
+    
+    // 4. prefix sums - freq arr
+    // 5. Find max freq index - which is the maximum occurred integer in given ranges
+    let maxIdx = 0
+    for(let i=1; i<maxRange+1; i++){
+        freq[i] += freq[i-1]
+        
+        if(freq[i] > freq[maxIdx]){
+            maxIdx = i
+        }
+    }
+    
+    return maxIdx
+}
 
 
 // ✅ TC = O(n) + O(Max Range = 100 here) = O(n + Max Range)

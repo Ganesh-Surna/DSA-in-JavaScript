@@ -27,8 +27,7 @@ function countNodes(node) {
 // ✅ TC: O(N) (Best/Average/Worst Case)
 // ✅ SC: O(1)
 function countNodesinLoop(head) {
-  let slow = head,
-    fast = head;
+  let slow = head, fast = head;
 
   while (slow && fast && fast.next) {
     slow = slow.next;

@@ -53,8 +53,8 @@ class LinkedList {
       return;
     }
     let current = this.head;
-    for (let i = 1; i < pos - 1 && current; i++) {
-      curr = current.next;
+    for (let i = 1; i < pos - 1 && current; i++) { // going till pos-2. for pos-2 the curr will move to pos-1 inside the loop for last time.
+      curr = current.next; // i<pos-1 because, the curr will be at the pos-1 node
     }
     if (!current) {
       console.log("Position should be valid");
@@ -68,8 +68,10 @@ class LinkedList {
     // if (!current) {
     //   return;
     // }
-    newNode.next = current.next;
-    current.next = newNode;
+
+    // curr is pos-1 node
+    newNode.next = current.next; 
+    current.next = newNode; 
   }
 
   // Delete first node with given value
@@ -86,6 +88,7 @@ class LinkedList {
       current = current.next;
     }
     if (current.next) {
+      // curr.next is the node with data === data
       current.next = current.next.next;
     }
   }
@@ -113,6 +116,8 @@ class LinkedList {
     }
 
     if (!curr.next) return -1;
+
+    // curr is the node with data === data
     return pos + 1;
   }
 
@@ -148,6 +153,7 @@ class LinkedList {
       curr = curr.next;
     }
 
+    // curr is the last node with data <= data
     newNode.next = curr.next;
     curr.next = newNode;
   }

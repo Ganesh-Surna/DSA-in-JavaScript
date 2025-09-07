@@ -17,7 +17,7 @@
 // 2. Partition Index Returned:
 //    - Hoare: Returns the index where left side <= pivot, right side >= pivot (pivot not fixed)
 //    - Lomuto: Returns the final index of the pivot (pivot is at correct position)
-//              : left side < pivot, right side >= pivot (pivot is not at correct position)
+//              : left side < pivot, right side >= pivot (pivot is at correct position)
 //              : (OR)
 //              : left side <= pivot, right side > pivot (pivot is at correct position)
 // 3. Swapping:

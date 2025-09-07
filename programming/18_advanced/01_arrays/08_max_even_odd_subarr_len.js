@@ -20,7 +20,7 @@ function maxEvenOddSubArrLen(arr) {
   console.log(max_len)
 }
 function areDifferent(a, b){
-    return (a%2===0 && b%2 !== 0) || (a%2 !==0 && b%2 === 0)
+    return (a%2===0 && b%2 !== 0) || (a%2 !==0 && b%2 === 0)  // simply a%2 !== b%2
 }
 
 

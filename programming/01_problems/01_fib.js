@@ -5,8 +5,8 @@ export function fibSeries() {
   // ✅ TC= O(n)
   // ✅ SC = O(1)
   function fun(n) {
-    let a = 0;
-    let b = 1;
+    let a = 0; // 1st fib no
+    let b = 1; // 2nd fib no
     console.log(a);
     console.log(b);
     for (let i = 2; i < n; i++) {

@@ -14,7 +14,7 @@ function lengthOfLongestSubstring(s) {
     while (set.has(s[right])) {
       set.delete(s[left]);
       left++;
-      // maxLen = Math.max(maxLen, right - left + 1); // This is not correct if the string' len = 1. Ex: s = " "
+      // maxLen = Math.max(maxLen, right - left + 1); // This is not correct if the string's len = 1. Ex: s = " "
     }
 
     // Expand the window from the right until the character is not in the set

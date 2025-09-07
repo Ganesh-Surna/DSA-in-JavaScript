@@ -26,7 +26,7 @@ function firstCircularTour(petrol, dist) {
             // - We cannot start from any pump between 'start' and 'i' (inclusive)
             // - So, try the next pump as the new start
             // - Add the petrol we were short by to prev_petrol
-            start = i + 1;
+            start = i + 1; // i+1✅  Not start+1❌
             prev_petrol += curr_petrol;
             curr_petrol = 0; // Reset petrol for the new start
         }

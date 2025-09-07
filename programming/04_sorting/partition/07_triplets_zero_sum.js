@@ -33,12 +33,13 @@ class Solution {
    * ✅ SC: O(1) (ignoring sort stack space)
    */
   findTriplets(arr) {
-    // Sort the array first
+    // ⭐⭐⭐ 1. Sort the array first
     // (Sorting the array is necessary to use two-pointer technique)
     arr.sort((a, b) => a - b);
 
+    // ⭐⭐⭐ 2. Use two-pointer technique inside the loop to find triplets (i.e., for each element, find if there exists a pair that sums to -arr[i])
     const n = arr.length;
-    for (let i = 0; i < n - 2; i++) {
+    for (let i = 0; i < n - 2; i++) { // i < n-2 because we need at least 3 elements to form a triplet (if i = n-3 , then left = n-2, right = n-1)
       // To avoid duplicates, skip the same element
       if (i > 0 && arr[i] === arr[i - 1]) continue;
 

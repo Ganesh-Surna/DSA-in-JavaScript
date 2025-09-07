@@ -119,7 +119,7 @@ class Node {
             else if(!root.right) return root.left
             else{
                 // ✅ Inorder traversal of a BST outputs data in sorted order. 
-                // ✅ Following rule of Closest Greater Node to deleting node to replace it.(inorder successor)
+                // ✅ Following "rule of Closest Greater Node to deleting node, to replace it.(inorder successor)"
                 const inorderSuccKey = this.getInorderSuccessor(root.right)
                 // Putting inorder succ value in deleting node (i.e., replacing)
                 root.key = inorderSuccKey
@@ -185,8 +185,10 @@ class Node {
   
           // Delete the successor (which is either a leaf or has only right child)
           if (successorParent === current) {
+              // if successor is the right child of current, then we need to set current's right to successor's right (i.e., deleting successor)
               successorParent.right = successor.right;
           } else {
+              // if successor is not the right child of current, then we need to set successorParent's left to successor's right (i.e., deleting successor - which is a leftmost leaf already, so successor.right)
               successorParent.left = successor.right;
           }
       }
