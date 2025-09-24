@@ -16,6 +16,31 @@ class Solution {
       this.quickSort(arr, p + 1, h); // partition right to p (p excludes)
     }
   }
+  /* ✅ Tail Call Elimination (TCE) in QuickSort is an optimization technique that
+  1. reduces the worst-case recursion depth from O(n) to O(log n) (...since we always recurse on the smaller partition).
+  2. Prevents stack overflow for large arrays.
+  3. Average and best-case time remains O(n log n).
+  4. Worst-case time remains O(n²), but stack depth is improved.
+  5. Auxiliary space reduces from O(n) (for recursion stack) to O(log n).
+  6. The improvement is primarily in space (stack depth), not time.
+  */
+  quickSortEliminateTailCallOptimization(arr, l = 0, h = arr.length - 1) {
+    while (l < h) {
+
+      // Partition 
+      const p = this.hoaresPartition(arr, l, h);
+
+      // If left partition is smaller, then recurse on left partition
+      // otherwise recurse on right partition
+      if(p-l < h-p){ // diff of indexes (if p-l < h-p --> left part is smaller size)
+        this.quickSort(arr, l, p-1 ); // recurse on left partition(smaller side)
+        l = p + 1; // Eleminate Tail call for right partition(larger side)
+      }else{
+        this.quickSort(arr, p + 1, h); // recurse on right partition(smaller side)
+        h = p-1; // Eleminate Tail call for left partition(larger side)
+      }
+    }
+  }
 
   hoaresPartition(arr, l, h) {
     let pivot = arr[l];

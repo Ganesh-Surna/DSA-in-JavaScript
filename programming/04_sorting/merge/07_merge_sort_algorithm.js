@@ -3,7 +3,7 @@
 
 class Solution {
   // 🕒 TC: O(n log n)
-  // 💾 SC: O(n)
+  // 💾 SC: O(n) (For slices → O(n) extra space. & For recursion → only O(log n), relatively small.)
   // Recursively sorts the array using merge sort
   mergeSort(arr, start = 0, end = arr.length - 1) {
     if (start < end) {
@@ -19,7 +19,7 @@ class Solution {
   }
 
   // 🕒 TC: O(n)
-  // 💾 SC: O(n)
+  // 💾 SC: O(n) (For slices → O(n) extra space.)
   // Merges two sorted parts of a single array (from start to mid, and mid+1 to end)
   merge(arr, start, mid, end) {
     let left = arr.slice(start, mid + 1);

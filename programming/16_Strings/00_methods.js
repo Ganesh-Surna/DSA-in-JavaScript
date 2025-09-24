@@ -117,3 +117,42 @@ console.log(String.fromCharCode(-1)); // '' (No output)
 console.log(String.fromCharCode(9731));  // '☃' (Snowman, Unicode 9731)
 console.log(String.fromCharCode(128512)); // '😀' (Grinning Face, Unicode 128512)
 ```
+
+// ### 17. Compare Lexicographically using Comparison Operators (<, >, <=, >=)
+function compareLexicographically(name1, name2) {
+    if (name1 < name2) {
+        return -1; // name1 comes before name2
+    } else if (name1 > name2) {
+        return 1;  // name1 comes after name2
+    } else {
+        return 0;  // names are equal
+    }
+}
+
+// Example usage:
+console.log(compareLexicographically("apple", "banana")); // -1
+console.log(compareLexicographically("banana", "apple")); // 1
+console.log(compareLexicographically("apple", "apple"));  // 0
+
+// ### 18. Locale Compare
+const names = ["zoe", "alice", "bob", "charlie"];
+
+// Ascending order (A-Z)
+const sortedAsc = names.sort((a, b) => a.localeCompare(b));
+console.log(sortedAsc); // ["alice", "bob", "charlie", "zoe"]
+
+// Descending order (Z-A)
+const sortedDesc = names.sort((a, b) => b.localeCompare(a));
+console.log(sortedDesc); // ["zoe", "charlie", "bob", "alice"]
+
+
+
+
+// ### 19. Compare Case Insensitive
+function compareCaseInsensitive(name1, name2) {
+    return name1.toLowerCase().localeCompare(name2.toLowerCase());
+}
+
+// Example usage:
+console.log(compareCaseInsensitive("Apple", "apple")); // 0 (equal)
+console.log(compareCaseInsensitive("apple", "BANANA")); // -1

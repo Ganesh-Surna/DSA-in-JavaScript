@@ -2,13 +2,13 @@ export function powerXN() {
   console.log("******* START of powerXN ********");
   // ✅ TC= O(log n)
   // ✅ SC = O(1)
-  function power1(n, x) {
+  function power1(n, x) { // x is val, n is power
     let res = 1;
     while (n > 0) {
-      if (n % 2 !== 0) {
+      if (n % 2 !== 0) { // Odd case
         res = res * x;
       }
-      x = x * x;
+      x = x * x; // always (but only after odd case)
       n = Math.floor(n / 2);
     }
     return res;
