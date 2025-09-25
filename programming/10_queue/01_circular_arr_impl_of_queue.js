@@ -10,8 +10,9 @@ class Queue {
     if (this.sz === this.cap) {
       return;
     }
-    let r = this.front + this.sz - 1;
-    r = (r + 1) % this.cap;
+    let r = this.front + this.sz - 1; // current rear index
+    r = (r + 1) % this.cap; // new rear index (circular)
+    // Or directly write r = (this.front + this.sz) % this.cap; // new rear index (circular) ✅
     this.arr[r] = x;
     this.sz++;
   }
@@ -20,9 +21,9 @@ class Queue {
   deque() {
     if (this.sz === 0) return null;
 
-    let front = this.arr[this.front];
+    let front = this.arr[this.front]; // current front element
 
-    this.front = (this.front + 1) % this.cap;
+    this.front = (this.front + 1) % this.cap; // move front to next element (circular)
 
     this.sz--;
 
@@ -31,11 +32,11 @@ class Queue {
   }
   getFront() {
     if (this.sz === 0) return null;
-    return this.arr[this.front];
+    return this.arr[this.front]; // current front element
   }
   getRear() {
     if (this.sz === 0) return null;
-    const r = (this.front + this.sz - 1) % this.cap;
+    const r = (this.front + this.sz - 1) % this.cap; // current rear index(circular) ✅
     return this.arr[r];
   }
   size() {
