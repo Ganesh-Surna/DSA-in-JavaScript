@@ -8,9 +8,11 @@ class TreeNode {
 
 // ✅ TC = O(n), SC = O(h)
 function buildBSTFromPostorder(postorder) {
-  // 1. Initialize index to the last element of the postorder array
+  // 1. Initialize index to the last element of the postorder array (i.e., last element of postorder is the root)
   let index = postorder.length - 1;
+  return helper(-Infinity, Infinity);
 
+  // Helper Function
   function helper(lowerBound, upperBound) {
     // 2. If we have processed all elements, return null
     if (index < 0) return null;
@@ -26,7 +28,7 @@ function buildBSTFromPostorder(postorder) {
     // 5. Create a new node with the current value
     const root = new TreeNode(val);
 
-    // 6. Build right subtree first, then left
+    // 6. Build right subtree first, then left (coz postorder is left-right-root, i.e., in postorder From R->L root comes first, then right & then left)
     root.right = helper(val, upperBound);
     root.left = helper(lowerBound, val);
 
@@ -34,7 +36,6 @@ function buildBSTFromPostorder(postorder) {
     return root;
   }
 
-  return helper(-Infinity, Infinity);
 }
 
 // ********** USAGE: **********

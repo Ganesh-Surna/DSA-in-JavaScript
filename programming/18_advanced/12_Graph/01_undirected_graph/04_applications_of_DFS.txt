@@ -1,0 +1,39 @@
+/*
+Applications of DFS (Graph)
+---------------------------------
+1) Cycle detection
+   - Detect cycles using recursion stack (directed) or parent check (undirected).
+
+2) Topological sorting (DAG)
+   - Postorder/stack order from DFS yields a valid topological order.
+
+3) Strongly Connected Components (SCC)
+   - Kosaraju (two DFS passes) or Tarjan (single DFS with lowlink values) are two algorithms to find SCCs.
+
+4) Solving mazes and similar puzzles
+   - Backtracking/DFS explores paths deeply; useful for enumerating solutions.
+
+5) Path finding
+   - Find any path between two nodes; enumerate all paths with backtracking.
+
+
+
+
+// More DFS uses
+6) Articulation points and bridges (undirected)
+   - DFS discovery/low times identify critical vertices/edges.
+
+7) Detecting/Building DFS tree and discovery/finish times
+   - Useful in algorithm analysis and classifying edges.
+
+8) Top-down dynamic programming on DAGs/trees
+   - DFS order to process dependencies once.
+
+9) Generating permutations/combinations (implicit graphs)
+   - Classic backtracking patterns modeled as DFS on state-space graphs.
+
+10) Connected components (undirected)
+    - Run DFS from each unvisited node to label components.
+*/
+
+

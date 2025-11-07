@@ -2,14 +2,18 @@
 // SC = O(n^2) (for storing the memoization table.)
 
 var numTrees = function(n) {
-    // Memoization table to store the number of unique BSTs for a given range [start, end]
+    // 1. Memoization table to store the number of unique BSTs for a given range [start, end]
     const memo = new Array(n + 1).fill().map(() => new Array(n + 1).fill(0));
     
+    return countTrees(1, n);
+    
+    // Helper Function
     function countTrees(start, end) {
         if (start > end) {
             return 1; // One null tree
         }
-        if (memo[start][end] !== 0) {
+        if (memo[start][end] !== 0) { 
+            // ✅ if the number of unique BSTs for a given range [start, end] is already calculated, then return it
             return memo[start][end];
         }
         let total = 0;
@@ -18,12 +22,17 @@ var numTrees = function(n) {
             const left = countTrees(start, i - 1);
             // Number of right subtrees
             const right = countTrees(i + 1, end);
-            // Total number of trees with i as root
-            total += left * right;
+
+            /* Total number of trees with i as root
+                for(let left of leftTrees){
+                    for(let right of rightTrees){
+                }
+            So, left * right = total number of trees with i as root
+            */
+            total += left * right; 
         }
-        memo[start][end] = total;
+        memo[start][end] = total; // ✅ store the number of unique BSTs for a given range [start, end]
         return total;
     }
     
-    return countTrees(1, n);
 };

@@ -13,6 +13,24 @@
 // True
 
 // ✅ Correct Code
+function isValidBST(root, min=-Infinity, max=Infinity) {
+    if(!root) return true
+
+    return ((min < root.val && max > root.val) && isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max))
+};
+
+// OR
+function isValidBST(root, min=-Infinity, max=Infinity) {
+    if(!root) return true
+
+    if(min >= root.val || max <= root.val){
+        return false
+    }
+
+    return (isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max))
+};
+
+// OR
 var isValidBST = function(root, min=null, max=null) {
     if(!root) return true
 

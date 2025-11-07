@@ -88,7 +88,7 @@ class MinHeap {
 
   // ✅ TC = O(logn) // while loop goes upto logn height
   // ✅ SC = O(1)
-  decreaseKey(i, x) {
+  decreaseKey(i, x) { // Decreasing key at index i will not effect the childs but may effect the parent (coz min-heap property)
     let arr = this.arr;
     arr[i] = x;
 

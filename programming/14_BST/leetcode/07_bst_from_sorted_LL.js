@@ -18,8 +18,8 @@
  * @return {TreeNode}
  */
 var sortedListToBST = function(head) {
-    if (!head) return null;
-    if (!head.next) return new TreeNode(head.val);
+    if (!head) return null; // if the list is empty, then return null
+    if (!head.next) return new TreeNode(head.val); // if the list has only one element, then return the root node (Leaf node)
     
     let slow = head; // mid
     let fast = head;
@@ -35,9 +35,9 @@ var sortedListToBST = function(head) {
     prev.next = null; // Split the list into two halves
     
     // Slow is the mid
-    const root = new TreeNode(slow.val);
-    root.left = sortedListToBST(head); // left side LL of mid/Slow (cut by prev.next = null)
-    root.right = sortedListToBST(slow.next); // // right side LL of mid/Slow
+    const root = new TreeNode(slow.val); // create a new node with the middle element of the list
+    root.left = sortedListToBST(head); // left side LL of mid/Slow (cut by prev.next = null, i.e., from head to before mid)
+    root.right = sortedListToBST(slow.next); // // right side LL of mid/Slow (from next of mid to end)
     
     return root;
 };

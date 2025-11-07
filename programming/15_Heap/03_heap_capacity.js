@@ -15,7 +15,7 @@ class MinHeap {
     /**
      * @return {number}
      */
-    extractMin() {
+    extractMin() { // ✅ TC = O(logn)
         // Your code here.
         let arr = this.harr, n = this.heap_size
         if(n===0) return -1;
@@ -38,7 +38,7 @@ class MinHeap {
      */
 
     // ✅ TC = O(logn)
-    insertKey(k) {
+    insertKey(k) { // ✅ TC = O(logn)
         // Your code here.
         let arr = this.harr
         if(this.heap_size === this.capacity) return
@@ -51,37 +51,38 @@ class MinHeap {
         while(i > 0 && arr[this.parent(i)] > arr[i]){
             let p = this.parent(i);
             [arr[i], arr[p]] = [arr[p], arr[i]];
-            i=p
+            i=p // Move to the parent
         }
         
-        this.heap_size++
+        this.heap_size++ // Increment the heap size
     }
 
     /**
      * @param {number} i
      */
-    deleteKey(i) {
+    deleteKey(i) { // ✅ TC = O(logn)
         // Your code here.
         if(i >= this.heap_size || this.heap_size === 0) return
         this.decreaseKey(i, -Infinity)
         this.extractMin()
     }
-
+    
     // Decrease key operation, helps in deleting the element
-    decreaseKey(i, new_val) {
+    // Decreasing key at index i will not effect the childs but may effect the parent (coz of min-heap property - the children should be greater than the node)
+    decreaseKey(i, new_val) { // ✅ TC = O(logn)
         this.harr[i] = new_val;
         while (i > 0 && this.harr[this.parent(i)] > this.harr[i]) {
             let temp = this.harr[i];
             this.harr[i] = this.harr[this.parent(i)];
             this.harr[this.parent(i)] = temp;
-            i = this.parent(i);
+            i = this.parent(i); // Move to the parent
         }
     }
 
     /* You may call below MinHeapify function in
       above codes. Please do not delete this code
       if you are not writing your own MinHeapify */
-    MinHeapify(i) {
+    MinHeapify(i) { // ✅ TC = O(logn)
         let l = this.left(i);
         let r = this.right(i);
         let smallest = i;

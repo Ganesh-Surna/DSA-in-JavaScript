@@ -1,5 +1,6 @@
 // ✅ TC = O(n)
 // ✅ SC = O(1)
+// NOTE : Build Heap itself won't sort the array, it only builds a max heap(which follows the max heap property)
 function buildHeap(arr) {
   let n = arr.length;
 
@@ -14,7 +15,7 @@ function buildHeap(arr) {
 function maxHeapify(arr, size, i) {
   let n = size; // (that is shrinking from right, not the whole length of arr in case of Heap Sort)
 
-  // left & right indeces
+  // left & right children indeces
   let l = 2 * i + 1,
     r = 2 * i + 2;
 
@@ -28,7 +29,7 @@ function maxHeapify(arr, size, i) {
 
   if (max_idx !== i) {
     [arr[max_idx], arr[i]] = [arr[i], arr[max_idx]];
-    this.maxHeapify(arr, n, max_idx);
+    maxHeapify(arr, n, max_idx);
   }
 }
 
@@ -41,7 +42,7 @@ function maxHeapifyIterative(arr, size, i) {
     if (r < size && arr[r] > arr[max_idx]) max_idx = r;
     if (max_idx === i) break;
     [arr[i], arr[max_idx]] = [arr[max_idx], arr[i]];
-    i = max_idx; // Move to the child
+    i = max_idx; // Move to the child (coz after swap, the child may be violating the max heap property)
   }
 }
 // ✅ TC = O(nlogn)
@@ -56,7 +57,7 @@ function heapSort(arr) {
 
   // TC = O(nlogn) ---> O(n) * O(logn)
   for (let i = n - 1; i > 0; i--) {
-    [arr[i], arr[0]] = [arr[0], arr[i]];
+    [arr[i], arr[0]] = [arr[0], arr[i]]; // moving the max element to the end of shrinked array
 
     // i is the size of arr to be considered while it is shrinking from right
     // only the root is voilating after above swap, so maxHeapify at index "0"

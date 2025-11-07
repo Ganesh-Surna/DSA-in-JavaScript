@@ -25,23 +25,23 @@ var generateTrees = function(n) {
 };
 
 function generate(start, end){
-    let trees = []
+    let trees = [] // Not a global variable, it is a local variable to the function generate
     if(start > end){
-        trees.push(null)
+        trees.push(null) // if start > end, then return an empty tree
         return trees
     }
 
     for(let i=start; i<=end; i++){
-        let leftTrees = generate(start, i-1)
-        let rightTrees = generate(i+1, end)
+        let leftTrees = generate(start, i-1) // all possible left subtrees (should be < curr node's value(i))
+        let rightTrees = generate(i+1, end) // all possible right subtrees (should be > curr node's value(i))
 
         for(let left of leftTrees){
             for(let right of rightTrees){
-                let root = new TreeNode(i)
+                let root = new TreeNode(i) // curr node's value(i)
                 root.left = left
                 root.right = right
 
-                trees.push(root)
+                trees.push(root) // push the curr node's value(i) (pushing root means, pushing a tree)
             }
         }
     }

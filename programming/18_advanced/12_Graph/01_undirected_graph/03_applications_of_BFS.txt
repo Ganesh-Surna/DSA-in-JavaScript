@@ -1,0 +1,63 @@
+/*
+Applications of BFS (Graph)
+---------------------------------
+1) Shortest path in an unweighted graph
+   - BFS finds minimum-edge paths from a source to all reachable vertices.
+
+2) Crawlers in search engines
+   - Layer-by-layer web crawling (discover pages by distance from seeds).
+
+3) Peer-to-peer networks
+   - Discover nearby peers/resources by hop count; flood-limited searches.
+
+4) Social networking search
+   - Find degrees of separation; suggest connections by BFS levels.
+
+5) Garbage collection (Cheney's algorithm)
+   - Copying GC scans reachable objects using BFS from roots.
+
+6) Cycle detection (in undirected graphs)
+   - Using BFS with parent tracking to detect back-edges.
+
+7) Ford–Fulkerson/Edmonds–Karp algorithm
+   - Uses BFS to find shortest augmenting paths in residual networks.
+
+8) Broadcasting
+   - Propagate messages level-by-level to all nodes in networks.
+*/
+
+/*
+More applications of BFS
+---------------------------------
+9) Connected components (undirected)
+   - Run BFS from every unvisited node to label components.
+
+10) Bipartite checking
+    - Two-color the graph by BFS levels; conflict ⇒ not bipartite.
+
+11) All nodes at distance K
+    - Level-order distances give exact nodes K hops from a source.
+
+12) Minimum edges between two nodes
+    - Shortest path by number of edges in any unweighted graph.
+
+13) Grid/maze shortest path
+    - Treat cells as nodes; BFS finds fewest steps to target.
+
+14) Knight moves on chessboard
+    - Model legal knight moves; BFS gives minimum moves.
+
+15) Snakes and Ladders (minimum dice throws)
+    - Board positions as nodes with edges via throws/ladders/snakes.
+
+16) Kahn’s algorithm for topological order (DAG)
+    - Uses BFS over zero in-degree vertices to output topo order.
+
+17) Routing/Tree construction from a root
+    - BFS tree yields parent pointers for shortest-hop routing.
+
+18) Influence/contagion spread simulation
+    - Discrete-time propagation over levels approximated by BFS waves.
+*/
+
+

@@ -22,8 +22,11 @@ var lowestCommonAncestor = function(root, p, q) {
             // Both nodes are in the right subtree
             curr = curr.right
         }
-        // We have found the LCA
         else {
+            // We have found the LCA.
+            // Either:
+            // 1. One is on left and one is on right
+            // 2. One is the current node and other is its child
             return curr;
         }
     }
