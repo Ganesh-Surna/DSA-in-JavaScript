@@ -14,8 +14,6 @@
 // Explanation: The rope can't be cut into pieces of length 4, 2 or 6.
 
 // Input: n = 9, a = 2, b = 2, c = 2
-
-// Input: n = 9, a = 2, b = 2, c = 2
 // Output: -1
 // Explanation: The rope can't be cut into pieces of length 2, 2 or 2.
 

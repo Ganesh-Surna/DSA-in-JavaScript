@@ -26,6 +26,18 @@ function countSubsetsWithSum(arr, target, i=0){
     return c
 }
 
+
+// WAY 2:
+function subsetSum(arr, sum=0, n=arr.length) {
+    if(sum===0) return 1 // Counting 1 if the sum becomes 0
+    if(n===0 || sum < 0) return 0
+    
+    let include = subsetSum(arr, sum-arr[n-1], n-1)
+    let exclude = subsetSum(arr, sum, n-1)
+    
+    return include + exclude 
+}
+
 let arr = [1, 2, 4, 8, 12, 16, 8, 15], target = 16; // 4
 arr = [10, 5, 2, 3, 6], target = 8; // 2
 
